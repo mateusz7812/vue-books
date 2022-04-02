@@ -1,5 +1,4 @@
 import authors_api from '../../api/authors'
-
 // initial state
 const state = () => ({
   all: []

@@ -35,14 +35,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./styles/_variables.scss";
+
 #app {
   min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #ded4c3;
+  color: $secondary-color;
+  background-color: $background-color;
 }
 </style>

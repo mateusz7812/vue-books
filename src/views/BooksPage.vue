@@ -7,16 +7,18 @@
       <div class="col-6">
         <router-link class="btn btn-lg btn-dark float-end" role="button" to="/books/new">Add Book</router-link>
       </div>
-
     </div>
     <BooksList/>
   </div>
 </template>
 
 <script>
-import BooksList from '../components/BooksList.vue'
-export default {
-  name: 'BooksPage',
-  components: { BooksList }
-}
+  import BooksList from '../components/BooksList.vue'
+  export default {
+    name: 'BooksPage',
+    created () {
+      this.$store.dispatch('books/fetchAllBooks')
+    },
+    components: { BooksList }
+  }
 </script>
