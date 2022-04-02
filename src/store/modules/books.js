@@ -7,6 +7,10 @@ const state = () => ({
 
 // getters
 const getters = {
+  getAllBooks: (state) => {
+    return state.all
+  },
+
   getBookById: (state) =>  (id) => {
     return state.all.find(b => b?.id == id)
   }
@@ -20,8 +24,7 @@ const actions = {
   },
 
   async fetchBookById ({ commit }, id) {
-    const book = await books_api.getBookById(id)
-    commit('setBook', book)
+    await books_api.getBookById(id).then(r => commit('setBook', r.data))
   },
 
   async deleteBookById({ commit }, id) {
@@ -30,13 +33,11 @@ const actions = {
   },
 
   async saveBook({ commit }, book){
-    await books_api.postBook(book)
-    commit('setBook', book)
+    await books_api.postBook(book).then(r => commit('setBook', r.data))
   },
 
   async updateBook({ commit }, book){
-    await books_api.updateBook(book)
-    commit('setBook', book)
+    await books_api.updateBook(book).then(r => commit('setBook', r.data))
   }
 }
 

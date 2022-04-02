@@ -15,11 +15,13 @@
 
 <script>
 import BookCard from '../components/BookCard.vue'
-import { mapState } from 'vuex'
+
 export default {
-  computed: mapState({
-    books: state => state.books.all
-  }),
+  props: {
+      books: {
+          type: []
+      }
+  },
   components: { BookCard }
 }
 </script>

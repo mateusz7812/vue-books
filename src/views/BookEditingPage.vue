@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row" style="padding-top: 80px;">
+  <div class="container" style="padding: 80px 0;">
+    <div class="row px-4">
       <div class="col-sm-6 col-xs-12">
         <h1 class="text-start">Book Editing</h1>
       </div>
